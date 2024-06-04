@@ -1,0 +1,97 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fenix';
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 95vh;
+	background-color: #063970;
+	font-family: 'Fenix';
+	color: white;
+	user-select: none;
+}
+
+h2 {
+	font-size: 190%;
+	font-weight: normal;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.input-box input::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.input-box input {
+	background-color: #063970;
+	border: 1px solid white;
+	border-radius: 13px;
+	color: white;
+	margin-bottom: 35px;
+	margin-top: 10px;
+	padding-block: 10px;
+	padding-inline: 9px;
+	text-align: left;
+	width: 400px;
+	margin-left: 100px;
+	position: relative;
+}
+
+input[type="checkbox"] {
+	cursor: pointer;
+	display: table-caption;
+	margin-bottom: 110px;
+	margin-left: 110px;
+}
+
+.show {
+    position: absolute;
+    top: 58.5%;
+    margin-left: -3.5%;
+    cursor: pointer;
+    color: white;
+}
+
+.manter-conectado a {
+	cursor: pointer;
+	color: white;
+	margin-left: 140px;
+    text-decoration: none;
+}
+
+.manter-conectado a:hover {
+	text-decoration: underline; 
+}
+
+.submit {
+	cursor: pointer;
+	background: white;
+	width: 10%;
+	height: 30px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	position: absolute;
+	left: 45%;
+	color: #063970;
+	font-size: 18px;
+	font-family: 'Fenix';
+	font-weight: bold;
+}
+
+.centralizado {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.erro-msg {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+}
