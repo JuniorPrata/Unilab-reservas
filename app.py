@@ -44,5 +44,9 @@ def pagina_principal():
 def index():
     return redirect(url_for('login'))
 
+@app.route('/lab')
+def lab():
+    return render_template ('lab.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

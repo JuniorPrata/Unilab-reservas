@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: none;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #063970;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 170px;
+    margin-left: -6.5px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: unset;
+    text-align: center;
+}
+
+.sidebar nav ul.top {
+    margin-top: 0;
+}
+
+.sidebar nav ul.bottom {
+    margin-top: 150px;
+}
+
+.sidebar nav ul.top li {
+    margin-bottom: 60px;
+}
+
+.sidebar nav ul.bottom li {
+    margin-bottom: 30px;
+}
+
+.sidebar nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.sidebar nav ul li a.active {
+    background-color: #43BD48;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.main-content {
+    margin-left: 220px; /* Adjusted to avoid overlap with sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header .date {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.lab-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.lab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.lab img {
+    width: 100%;
+    height: auto;
+}
+
+.lab span {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
