@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniFecaf Lab</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczOIBJoEVyL_Y4LHu1LcaYc68wYZFqvkjOy0kQcZsqQUY4ZR4C2UuVI2eDPPQLnr4Hrs8iPjNiQUMdK9BRy8WGxYCjjXZzzal4F5GEjQC384Ew_lfE-8rJg9RU27lwlRkNDvzGk0WG3EdiA9GmAtRX5-=w600-h600-s-no-gm?authuser=0" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reserva.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczN5tm25HK6WJtYs-u_zmYpLApBCpjEJEdOaWkDfxo_Fc9qOImsudrTTBs_J3zQY3V-69r2L534zfIfp0V3bcWWfrtru2fDO_L-d6-ir4Dp1dmPfzhIPb6d4vrHWdHqgIyMriQrxmqiL3qnsWUX3SmsF=w960-h315-s-no-gm?authuser=0" alt="UniFECAF">
+            </div>
+            <nav>
+                <ul class="top">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#" >Laboratórios</a></li>
+                    <li><a href="#" class="active" >Fazer Reserva</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="#">Minha Conta</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <h1>Para avançarmos com a confirmação da reserva, responda a ficha a seguir.</h1>
+            </header>
+            <div id="linha">
+              </div>
+            <h2>Escolha o Laboratório:</h2>
+            <form action="" method="post">
+                <select name="lab">
+                    <option value="lab1">Laboratório 1</option>
+                    <option value="lab2">Laboratório 2</option>
+                    <option value="lab3">Laboratório 3</option>
+                    <option value="lab4">Laboratório 4</option>
+                    <option value="lab5">Laboratório 5</option>
+                    <option value="lab6">Laboratório 6</option>
+                    <option value="lab7">Laboratório 7</option>
+                </select>
+                <h2>Escolha a Data:</h2>
+                <input type="text" name="date" placeholder="dd/mm/aaaa">
+                <h2>Escolha o Horário:</h2>
+                <select name="time">
+                    <option value="07:00-10:00">07:00 - 10:00</option>
+                    <option value="10:00-13:00">10:00 - 13:00</option>
+                    <option value="13:00-16:00">13:00 - 16:00</option>
+                    <option value="16:00-19:00">16:00 - 19:00</option>
+                    <option value="19:00-22:00">19:00 - 22:00</option>
+                </select>
+            </form>
+            <input type="submit" value="Reservar">
+        </div>
+    </div>
+</body>
+</html>

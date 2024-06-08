@@ -48,5 +48,9 @@ def index():
 def lab():
     return render_template ('lab.html')
 
+@app.route('/reserva')
+def reserva():
+    return render_template ('reserva.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
