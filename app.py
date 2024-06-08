@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Lista de usuários válidos
 usuarios_validos = [
     {"nome": "66082", "senha": "30071999"},
-    {"nome": "usuario1@example.com", "senha": "Senha123"},
+    {"nome": "67523", "senha": "67523"},
     {"nome": "usuario2@example.com", "senha": "Senha456"},
     {"nome": "usuario3@example.com", "senha": "Senha789"}
 ]
