@@ -16,9 +16,9 @@
             </div>
             <nav>
                 <ul class="top">
-                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/pagina_principal">Início</a></li>
-                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/lab" >Laboratórios</a></li>
-                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/reserva" class="active" >Fazer Reserva</a></li>
+                    <li><a href="{{ url_for('pagina_principal') }}">Início</a></li>
+                    <li><a href="{{ url_for('lab') }}">Laboratórios</a></li>
+                    <li><a href="{{ url_for('reserva') }}" class="active">Fazer Reserva</a></li>
                 </ul>
                 <ul class="bottom">
                     <li><a href="#">Minha Conta</a></li>
@@ -30,10 +30,9 @@
             <header>
                 <h1>Para avançarmos com a confirmação da reserva, responda a ficha a seguir.</h1>
             </header>
-            <div id="linha">
-              </div>
+            <div id="linha"></div>
             <h2>Escolha o Laboratório:</h2>
-            <form action="" method="post">
+            <form action="{{ url_for('reserva') }}" method="post">
                 <select name="lab">
                     <option value="lab1">Laboratório 1</option>
                     <option value="lab2">Laboratório 2</option>
@@ -44,7 +43,7 @@
                     <option value="lab7">Laboratório 7</option>
                 </select>
                 <h2>Escolha a Data:</h2>
-                <input type="text" name="date" placeholder="dd/mm/aaaa">
+                <input type="text" name="date" placeholder="dd/mm/aaaa" required>
                 <h2>Escolha o Horário:</h2>
                 <select name="time">
                     <option value="07:00-10:00">07:00 - 10:00</option>
@@ -53,8 +52,18 @@
                     <option value="16:00-19:00">16:00 - 19:00</option>
                     <option value="19:00-22:00">19:00 - 22:00</option>
                 </select>
+                <br><br>
+                <input type="submit" value="Reservar">
             </form>
-            <input type="submit" value="Reservar">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
         </div>
     </div>
 </body>

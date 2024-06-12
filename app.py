@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = 'some_secret_key'
 
 # Lista de usuários válidos
 usuarios_validos = [
@@ -10,6 +11,9 @@ usuarios_validos = [
     {"nome": "usuario2@example.com", "senha": "Senha456"},
     {"nome": "usuario3@example.com", "senha": "Senha789"}
 ]
+
+# Lista para armazenar reservas
+reservas = []
 
 def validar_usuario(nome, senha):
     # Verifica se o nome e senha fornecidos estão na lista de usuários válidos
@@ -32,13 +36,8 @@ def login():
 
 @app.route('/pagina_principal')
 def pagina_principal():
-    reservations = [
-        {"info": "João, Física, 10:00-11:00", "top": 50, "height": 30},
-        {"info": "Maria, Matemática, 11:00-12:00", "top": 100, "height": 30},
-        # Adicione mais reservas conforme necessário
-    ]
     current_date = datetime.now().strftime("%d/%m/%Y")
-    return render_template('index.html', reservations=reservations, current_date=current_date)
+    return render_template('index.html', reservas=reservas, current_date=current_date)
 
 @app.route('/')
 def index():
@@ -46,11 +45,18 @@ def index():
 
 @app.route('/lab')
 def lab():
-    return render_template ('lab.html')
+    return render_template('lab.html')
 
-@app.route('/reserva')
+@app.route('/reserva', methods=['GET', 'POST'])
 def reserva():
-    return render_template ('reserva.html')
+    if request.method == 'POST':
+        lab = request.form['lab']
+        date = request.form['date']
+        time = request.form['time']
+        reservas.append({"lab": lab, "date": date, "time": time})
+        flash('Reserva realizada com sucesso!')
+        return redirect(url_for('pagina_principal'))
+    return render_template('reserva.html')
 
 @app.route('/labs')
 def labs():
