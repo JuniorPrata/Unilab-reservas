@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniFecaf Lab</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczOIBJoEVyL_Y4LHu1LcaYc68wYZFqvkjOy0kQcZsqQUY4ZR4C2UuVI2eDPPQLnr4Hrs8iPjNiQUMdK9BRy8WGxYCjjXZzzal4F5GEjQC384Ew_lfE-8rJg9RU27lwlRkNDvzGk0WG3EdiA9GmAtRX5-=w600-h600-s-no-gm?authuser=0" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='labs.css') }}"/>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczN5tm25HK6WJtYs-u_zmYpLApBCpjEJEdOaWkDfxo_Fc9qOImsudrTTBs_J3zQY3V-69r2L534zfIfp0V3bcWWfrtru2fDO_L-d6-ir4Dp1dmPfzhIPb6d4vrHWdHqgIyMriQrxmqiL3qnsWUX3SmsF=w960-h315-s-no-gm?authuser=0" alt="UniFECAF">
+            </div>
+            <nav>
+                <ul class="top">
+                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/pagina_principal">Início</a></li>
+                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/lab" class="active">Laboratórios</a></li>
+                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/reserva">Fazer Reserva</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="#">Minha Conta</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="header">
+                <p>{{ current_date }}</p> <!-- A data será inserida aqui pelo Flask -->
+            </div>
+            <div class="schedule">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th>DOM</th>
+                            <th>SEG</th>
+                            <th>TER</th>
+                            <th>QUA</th>
+                            <th>QUI</th>
+                            <th>SEX</th>
+                            <th>SÁB</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>09:00</td>
+                            <td class="occupied" data-info="João, Física, 10:00-11:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td class="occupied" data-info="Maria, Matemática, 11:00-12:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="occupied" data-info="Pedro, Química,14:00-15:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="occupied" data-info="Ana, Biologia, 13:00-14:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="occupied" data-info="Lucas, Geografia, 15:00-16:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="occupied" data-info="Carla, História, 16:00-17:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15:00</td>
+                            <td class="occupied" data-info="Bruno, Física, 10:00-11:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td class="occupied" data-info="Clara, Química, 11:00-12:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="occupied" data-info="Daniel, Matemática, 14:00-15:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td class="occupied" data-info="Rafaela, Biologia, 15:00-16:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17;00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="occupied" data-info="Tiago, História, 16:00-17:00">
+                                <div class="reservation" style="top: 0px; height: 30px;">
+                                    <span>.</span>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>19:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

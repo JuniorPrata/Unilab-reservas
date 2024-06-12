@@ -65,58 +65,73 @@ body {
     border-radius: 5px;
 }
 
-.main-content {
-    margin-left: 220px; /* Adjusted to avoid overlap with sidebar */
+.content {
+    margin-left: 220px;
     padding: 20px;
-    flex: 1;
+    box-sizing: border-box;
+    width: calc(100% - 200px);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.header {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    margin-top: -10px;
 }
 
-header .date {
-    font-size: 1.2em;
+.schedule table {
+    width: 99%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: -5px;
+}
+
+.schedule th, .schedule td {
+    right: 19px;
+    border: 1px solid #ccc;
+    padding: 18px;
+    text-align: center;
+    height: 30px;
+}
+
+.schedule th {
+    background-color: #f9f9f9;
     color: #333;
 }
 
-.lab-selection {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Reduced gap */
+.occupied {
+    position: relative; 
 }
 
-.lab {
-    position: relative; /* To contain the absolute positioning of span */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 0;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    width: calc(33.333% - 40px); /* Adjusted to fit 3 squares per row */
-    height: 150px; /* Making it square */
-    box-sizing: border-box;
+.reservation {
+    position: relative;
+    width: 90%;
+    background-color: #003366;
     text-align: center;
-    text-decoration: none;
-    color: black;
+    font-size: 12px;
+    line-height: 1.2;
 }
 
-.lab img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.lab span {
+.occupied::after {
+    content: attr(data-info); /* Pega o conteúdo do atributo data-info */
     position: absolute;
-    color: white;
-    font-size: 1.5em;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 5px 10px;
+    white-space: nowrap;
+    background: #fff;
+    color: #000;
+    padding: 3px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    top: 100%; /* Posição abaixo da célula */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    font-size: 12px;
+}
+
+.occupied:hover::after {
+    opacity: 1;
+    visibility: visible;
 }

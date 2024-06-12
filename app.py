@@ -52,5 +52,9 @@ def lab():
 def reserva():
     return render_template ('reserva.html')
 
+@app.route('/labs')
+def labs():
+    return render_template('labs.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
