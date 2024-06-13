@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniFecaf Lab</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczOIBJoEVyL_Y4LHu1LcaYc68wYZFqvkjOy0kQcZsqQUY4ZR4C2UuVI2eDPPQLnr4Hrs8iPjNiQUMdK9BRy8WGxYCjjXZzzal4F5GEjQC384Ew_lfE-8rJg9RU27lwlRkNDvzGk0WG3EdiA9GmAtRX5-=w600-h600-s-no-gm?authuser=0" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczN5tm25HK6WJtYs-u_zmYpLApBCpjEJEdOaWkDfxo_Fc9qOImsudrTTBs_J3zQY3V-69r2L534zfIfp0V3bcWWfrtru2fDO_L-d6-ir4Dp1dmPfzhIPb6d4vrHWdHqgIyMriQrxmqiL3qnsWUX3SmsF=w960-h315-s-no-gm?authuser=0" alt="UniFECAF">
+            </div>
+            <nav>
+                <ul class="top">
+                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/pagina_principal" class="active">Início</a></li>
+                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/lab">Laboratórios</a></li>
+                    <li><a href="https://unilab-d0686b327ca7.herokuapp.com/reserva">Fazer Reserva</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="#">Minha Conta</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="header">
+                <p>{{ current_date }}</p> <!-- A data será inserida aqui pelo Flask -->
+            </div>
+            <div class="tela-sucesso">
+                <h2>Sua reserva foi realizada com sucesso!</h2>
+                <p>Boa muleke!</p>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
