@@ -50,19 +50,18 @@ def lab():
 @app.route('/reserva', methods=['GET', 'POST'])
 def reserva():
     if request.method == 'POST':
-        nome = request.form['nome']
-        materia = request.form['materia']
         lab = request.form['lab']
         date = request.form['date']
         time = request.form['time']
-        reservas.append({"nome": nome, "materia": materia, "lab": lab, "date": date, "time": time})
+        reservas.append({"lab": lab, "date": date, "time": time})
         flash('Reserva realizada com sucesso!')
         return redirect(url_for('pagina_principal'))
     return render_template('reserva.html')
 
-@app.route('/reserva-semana')
-def semana():
-    return render_template('reserva-semana.html')
+@app.route('/labs')
+def labs():
+    return render_template('labs.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+

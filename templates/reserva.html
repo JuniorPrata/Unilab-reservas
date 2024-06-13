@@ -33,19 +33,19 @@
             <div id="linha"></div>
             <h2>Escolha o Laboratório:</h2>
             <form action="{{ url_for('reserva') }}" method="post">
-                <select name="lab">
-                    <option value="lab1">Laboratório 1</option>
-                    <option value="lab2">Laboratório 2</option>
-                    <option value="lab3">Laboratório 3</option>
-                    <option value="lab4">Laboratório 4</option>
-                    <option value="lab5">Laboratório 5</option>
-                    <option value="lab6">Laboratório 6</option>
-                    <option value="lab7">Laboratório 7</option>
+                <select name="lab" required>
+                    <option value="LAB 01">Laboratório 1</option>
+                    <option value="LAB 02">Laboratório 2</option>
+                    <option value="LAB 03">Laboratório 3</option>
+                    <option value="LAB 04">Laboratório 4</option>
+                    <option value="LAB 05">Laboratório 5</option>
+                    <option value="LAB 06">Laboratório 6</option>
+                    <option value="LAB 07">Laboratório 7</option>
                 </select>
                 <h2>Escolha a Data:</h2>
-                <input type="text" name="date" placeholder="dd/mm/aaaa" required>
+                <input type="date" name="date" required>
                 <h2>Escolha o Horário:</h2>
-                <select name="time">
+                <select name="time" required>
                     <option value="07:00-10:00">07:00 - 10:00</option>
                     <option value="10:00-13:00">10:00 - 13:00</option>
                     <option value="13:00-16:00">13:00 - 16:00</option>
