@@ -58,9 +58,9 @@ def reserva():
         return redirect(url_for('sucesso'))
     return render_template('reserva.html')
 
-@app.route('/labs')
-def labs():
-    return render_template('labs.html')
+@app.route('/reserva-semana')
+def semana():
+    return render_template('reserva-semana.html')
 
 @app.route('/sucesso')
 def sucesso():
